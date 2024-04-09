@@ -24,5 +24,11 @@ curriculums = {
         tree_file="../data/curriculum_tree_math.obj",
         heading="Elective Modules in Master Mathematics",
         tree_url="https://campus.tum.de/tumonline/wbstpcs.showSpoTree?pStpStpNr=4852&pSjNr=1617",
-    )
+    ),
+    "master-msce": SimpleNamespace(
+        use_theory_nodes=False,
+        tree_file="../data/curriculum_tree_msce.obj",
+        heading="Elective Modules in Master of Science in Communications and Electronics Engineering",
+        tree_url="https://campus.tum.de/tumonline/wbstpcs.showSpoTree?pStpStpNr=5136",
+    ),
 }

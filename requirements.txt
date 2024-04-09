@@ -1,0 +1,8 @@
+webdriver-manager  # For managing browser drivers, includes GeckoDriverManager
+selenium  # For automating web browser interaction
+python-dotenv  # For loading environment variables from a .env file
+tqdm  # For adding progress bars
+requests  # For making HTTP requests
+pandas  # For data manipulation and analysis
+numpy  # For numerical computing
+regex  # An alternative to the re module with more features

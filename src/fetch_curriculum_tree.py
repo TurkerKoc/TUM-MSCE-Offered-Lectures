@@ -8,6 +8,7 @@ import os
 from curriculums import curriculums
 import argparse
 import tqdm
+import time 
 
 def click_button(driver, button):
     # The toggle buttons execute some script on `onclick` to expand the tree.
@@ -78,6 +79,13 @@ def main():
     driver.get(curriculum.tree_url)
     
     # Find the "Elective Modules" subtree (ignore other top-level subtrees)
+    plus_buttons = descendant_plus_buttons(driver)
+    examination_performance_button = next(button for button in plus_buttons if "Examination Performance" in button.text or "Prüfungsleistung" in button.text)
+    click_button(driver, examination_performance_button)
+    # Wait for the nested buttons to be visible if necessary
+    time.sleep(1)  # Adjust sleep time based on how long it typically takes to load
+    # Now find the "Elective Modules" subtree (ignore other top-level subtrees)
+    # The descendant_plus_buttons might need to be called again if the page structure changes after clicking
     plus_buttons = descendant_plus_buttons(driver)
     (electives_button, ) = [button for button in plus_buttons
                             if ("Elective Modules" in button.text
